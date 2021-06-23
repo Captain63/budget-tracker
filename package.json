@@ -1,0 +1,19 @@
+{
+  "name": "budget-tracker",
+  "version": "1.0.0",
+  "description": "Progressive web application that enables user to add expenses and deposits to their budget online or offline. Built using Express, IndexedDB and MongoDB.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Captain63/budget-tracker.git"
+  },
+  "author": "Stephen Roddewig (Captian63)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Captain63/budget-tracker/issues"
+  },
+  "homepage": "https://github.com/Captain63/budget-tracker#readme"
+}
