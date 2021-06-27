@@ -3,6 +3,7 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const compression = require("compression");
+const routes = require("./routes");
 
 // Set port to environmental variable or local port
 const PORT = process.env.PORT || 3001;
@@ -22,7 +23,10 @@ app.use(express.json());
 // Expose public directory to client side
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", 
+// Add routes
+app.use(routes);
+
+mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/workoutdb", 
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -30,9 +34,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb",
         useFindAndModify: false
     }
 );
-
-// Add routes
-app.use(require("./routes/api.js"));
 
 // Launch application server
 app.listen(PORT, () => {
