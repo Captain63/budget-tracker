@@ -8,7 +8,7 @@ router.post("/transaction", ({body}, res) => {
     })
     .catch(err => {
       console.error(err);
-      res.status(404).json(err);
+      res.status(500).json(err);
     });
 });
 
@@ -19,7 +19,7 @@ router.post("/transaction/bulk", ({body}, res) => {
     })
     .catch(err => {
       console.error(err);
-      res.status(404).json(err);
+      res.status(500).json(err);
     });
 });
 
@@ -30,7 +30,7 @@ router.get("/transaction", (req, res) => {
     })
     .catch(err => {
       console.error(err);
-      res.status(404).json(err);
+      res.status(500).json(err);
     });
 });
 
