@@ -22,10 +22,14 @@ app.use(express.json());
 // Expose public directory to client side
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", 
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false
+    }
+);
 
 // Add routes
 app.use(require("./routes/api.js"));
