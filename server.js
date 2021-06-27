@@ -10,7 +10,6 @@ const PORT = process.env.PORT || 3001;
 // Configure app to use Express server
 const app = express();
 
-
 app.use(logger("dev"));
 
 // Add compression for all server requests
