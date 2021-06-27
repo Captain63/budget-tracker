@@ -3,7 +3,6 @@ let myChart;
 
 fetch("/api/transaction", {
   method: "GET",
-  body: JSON.stringify(transaction),
   headers: {
     Accept: "application/json, text/plain, */*",
     "Content-Type": "application/json"
