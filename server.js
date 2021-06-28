@@ -17,6 +17,15 @@ app.use(logger("dev"));
 // Add compression for all server requests
 app.use(compression());
 
+// Browser redirect
+exerciseApp.use(function forceLiveDomain(req, res, next) {
+  // If request has a domain for the Heroku deployment, redirect to base domain
+  if (req.get('Host').includes("herokuapp")) {
+    return res.redirect(301, `https://budget.stephentechblog.com${req.path}`);
+  }
+  return next();
+});
+
 // Configure app to receive and send JSON objects
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
