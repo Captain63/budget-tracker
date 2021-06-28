@@ -36,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Add routes
 app.use(routes);
 
-mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/workoutdb", 
+mongoose.connect( process.env.MONGODB_URI || "mongodb://localhost/budgetdb", 
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
