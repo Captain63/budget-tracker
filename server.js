@@ -18,7 +18,7 @@ app.use(logger("dev"));
 app.use(compression());
 
 // Browser redirect
-exerciseApp.use(function forceLiveDomain(req, res, next) {
+app.use(function forceLiveDomain(req, res, next) {
   // If request has a domain for the Heroku deployment, redirect to base domain
   if (req.get('Host').includes("herokuapp")) {
     return res.redirect(301, `https://budget.stephentechblog.com${req.path}`);
